@@ -19,7 +19,23 @@
 // as 4 and 3 are the only provided numbers between 2 and 4 (inclusive)
 
 function filterNumberArray(numberList, lowerLimit, upperLimit) {
-    return [];
-}
+//if(lowerLimit > upperLimit){
+   // return numberList;
+//}
+    let newArr=[];
 
+ for (let i =0 ; i<= numberList.length ; i ++) {
+
+    if (numberList[i] >=lowerLimit && numberList[i] <= upperLimit){
+      newArr.push(numberList[i]);
+
+    }else if(lowerLimit > upperLimit){
+        return numberList;
+    }
+    
+ }
+ return newArr;
+    //return numberList;
+}
+//console.log(filterNumberArray);
 module.exports.filterNumberArray = filterNumberArray;
