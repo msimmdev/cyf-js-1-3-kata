@@ -3,7 +3,7 @@
 // numberList = an array
 // lowerLimit = an integer
 // upperLimit = an integer
-// 
+//
 // RULES
 // 1. The function should return an array of integers
 // 2. The returned array should include all numbers in numberList that are
@@ -17,9 +17,21 @@
 // should return
 // [4,3]
 // as 4 and 3 are the only provided numbers between 2 and 4 (inclusive)
-
 function filterNumberArray(numberList, lowerLimit, upperLimit) {
-    return [];
+  const rangeArray = [];
+
+  if (lowerLimit > upperLimit) {
+    return numberList;
+  } else {
+    for (let num of numberList) {
+      if (Number.isInteger(num)) {
+        if (num >= lowerLimit && num <= upperLimit) {
+          rangeArray.push(num);
+        }
+      }
+    }
+    return rangeArray;
+  }
 }
 
 module.exports.filterNumberArray = filterNumberArray;
